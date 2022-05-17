@@ -1,0 +1,11 @@
+Hello, welcome, greetings.
+
+This is a development build of a maya autorig. The UI is still being implemented, so there isn't
+a structed way to test the functionality, but hopefully it can showcase some of my previous 
+Originally written back in 2020, there are definitely areas that can be improved and refactored, 
+but it should serve as an example of some of my program skill and familiarity.
+
+Please understand, none of the Ui is finished,but I left it to show the most basic of
+familiarity with PySide.
+
+
