@@ -130,7 +130,7 @@ def replaceSegment(name, index, replacement='NA'):
     segments = __nameToSegments(name)
     segmentIndices = ['char','typ','name','side','IDs','class']
     if isinstance(index, str):
-        segmentIndices.index(index)
+        index = segmentIndices.index(index)
     segments[index] = replacement
     return __segmentsToName(segments)
 

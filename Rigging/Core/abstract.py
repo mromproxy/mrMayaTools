@@ -176,7 +176,7 @@ def assembleFootIK(ankle_jnt,verts='',geo='',ankle_ik='',
 
 #ready but needs stress test and clav + end pairing tests
 def assembleBasicLimb(jnts,mstrCntl='',clav=0,
-                    fk=1,fkCntlSize=1.0,fkRotation=(0,0,0),fkTyp='nested',
+                    fk=1,fkCntlSize=1.0,fkRotation=(0,0,90),fkTyp='nested',
                     fkRotationAxis='z',fkUpAxis='y',fkForwardAxis='x',fkShape='circle',fkPreset='',
                     ik=1,ikSolver='ikRPsolver', ikName='limb', ikShape='nail', 
                     ikCntlSize=1, ikRotation=(0,0,90),pvSize=1, pvDist=1, 
@@ -224,13 +224,18 @@ def assembleBasicLimb(jnts,mstrCntl='',clav=0,
     """
     controls = []
     if fk==1:
-        fk_cntls = assembleFK(jnts,fkCntlSize,fkRotation,fkTyp,fkRotationAxis,fkUpAxis,fkForwardAxis,fkShape,fkPreset)
+        fk_cntls = assembleFK(jnts,fkCntlSize,fkRotation,fkTyp,fkRotationAxis,
+                                fkShape,fkUpAxis,fkForwardAxis,preset=fkPreset)
     if ik==1:
-        ik_cntls = assembleIK(jnts=jnts,solver=ikSolver,shape=ikShape,cntlSize=ikCntlSize,rotation=ikRotation,pvSize=pvSize,pvDist=pvDist,preset=ikPreset,forwardAxis=ikForwardAxis,stickyTip=stickyTip,stickyShape=stickyShape,name=ikName,addClav=clav,attachAbove=1)
+        ik_cntls = assembleIK(jnts=jnts,solver=ikSolver,shape=ikShape,cntlSize=ikCntlSize,
+                                rotation=ikRotation,pvSize=pvSize,pvDist=pvDist,preset=ikPreset,
+                                forwardAxis=ikForwardAxis,stickyTip=stickyTip,stickyShape=stickyShape,
+                                name=ikName,addClav=clav,attachAbove=1)
     
     if fk and ik:
         if not mstrCntl:
-            mstr_cntl = makeMasterCntl(jnts[-1],cntlSize=mstrCntlSize,rotation=mstrRotation,cntlShape=mstrCntlShape,name=mstrName,offset=mstrOffset)
+            mstr_cntl = makeMasterCntl(jnts[-1],cntlSize=mstrCntlSize,rotation=mstrRotation,
+                                        cntlShape=mstrCntlShape,name=mstrName,offset=mstrOffset)
         else:
             mstr_cntl= mstrCntl
         mc.select(mstr_cntl)

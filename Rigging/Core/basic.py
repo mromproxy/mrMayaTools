@@ -44,6 +44,9 @@ def duplicateChain(jnts, typ='typ',addID='',conflictID=''):
         list: list of new joints
     """
     # TODO inspect conflictID handling
+    if not jnts:
+        raise ValueError("You must provide joints")
+
     if isinstance(jnts,(str)):
         jnts = [jnts]
 
@@ -335,7 +338,7 @@ def assembleIK(jnts, solver='ikRPsolver', name='', typ='ik',shape='nail',
 
     #makes the control to drive the ik handle
     ik_cntl_grp = makeCntl(endEffector,typ='ik',name=name,size=cntlSize,
-                            shape=shape,rotation=rotation,offsetShapeDist=offsetShapeDist)
+                            shape=shape,rotation=rotation,shapeOffset=offsetShapeDist)
     
     #enable orient ik to jnt
     # forgive me for garbage code

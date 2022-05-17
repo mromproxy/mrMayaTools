@@ -4,3 +4,6 @@
 #scene files
 .ma
 .mb
+
+#compiled
+.pyc

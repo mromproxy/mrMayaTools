@@ -291,11 +291,6 @@ def makeMasterCntl(root,
     Returns:
         str: name of the new control handle
     """
-    #house keeping
-    if isinstance(offsetDist,int):
-        offsetDist = float(offsetDist)
-    if isinstance(offsetDist,float):
-        offsetDist= (offsetDist,offsetDist,offsetDist)
     char = getSegment(root,0)
     #position
     root_pos = mc.xform(root,q=1,t=1,ws=1)

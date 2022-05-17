@@ -76,9 +76,11 @@ def reflect(a,b):
     """
 #Used for anim constraints
 def getAxis(axis):
-    axis = [0.0,0.0,0.0]
+    #axis = [0.0,0.0,0.0]
     #currently only supports linear
-    axis = axis.lower()
+    if isinstance(axis,str):
+        axis = axis.lower()
+            
     if 'x' in axis:
         if '-' in axis:
             return (-1.0,0.0,0.0)
@@ -94,7 +96,7 @@ def getAxis(axis):
             return (0.0,0.0,-1.0)
         else:
             return (0.0,0.0,1.0)
-    ##############
+"""    ##############
     axis = axis.lower()
     if 'x' in axis:
         if '-' in axis:
@@ -110,4 +112,4 @@ def getAxis(axis):
         if '-' in axis:
             z= -1
         else:
-            z= 1
+            z= 1"""
