@@ -1,8 +1,8 @@
 # mrMayaTools
 
-Collection of tools for Maya
+A Collection of tools for Maya
 
-The majoring of these tools are an auto-rigging or rigging focused. This was originally designed as a personal exercise and toolkit to help with my rigging tasks.
+The majority of these tools are an auto-rigging or rigging focused. This was originally designed as a personal exercise and toolkit to help with my rigging tasks.
 I wanted to build a system that was abstracted enough that artists could think in terms of body parts when setting up and flexible enough to support animators editing and customizing controls without lose of data.
 
 ## The code itself
